@@ -11,4 +11,13 @@ class Category extends Model
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory;
     use SoftDeletes;
+
+    //relationships
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
+    
+    public function resources(){
+        return $this->belongsTo(ResourceLDOE::class);
+    }
 }

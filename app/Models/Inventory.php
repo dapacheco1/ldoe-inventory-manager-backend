@@ -11,4 +11,9 @@ class Inventory extends Model
     /** @use HasFactory<\Database\Factories\InventoryFactory> */
     use HasFactory;
     use SoftDeletes;
+
+    //relationships
+    public function settingsInItems(){
+        return $this->hasMany(Item::class);
+    }
 }

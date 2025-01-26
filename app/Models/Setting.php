@@ -11,4 +11,9 @@ class Setting extends Model
     /** @use HasFactory<\Database\Factories\SettingFactory> */
     use HasFactory;
     use SoftDeletes;
+
+    //relationships
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
 }
